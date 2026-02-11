@@ -8,6 +8,7 @@ import CalculatorTool from './pages/CalculatorTool';
 import Extractor from './pages/Extractor';
 import Optimizer from './pages/Optimizer';
 import FAQ from './pages/FAQ';
+import CalculatorNotion from './pages/CalculatorNotion';
 
 const ScrollToTop = () => {
   React.useEffect(() => {
@@ -26,6 +27,7 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/calculator" element={<Calculator />} />
+            <Route path="/calculator/notion" element={<CalculatorNotion />} />
             <Route path="/calculator/tool" element={<CalculatorTool />} />
             <Route path="/extractor" element={<Extractor />} />
             <Route path="/optimizer" element={<Optimizer />} />
