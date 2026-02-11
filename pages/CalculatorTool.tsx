@@ -67,7 +67,7 @@ const CalculatorTool: React.FC = () => {
   }, [trips]);
 
   return (
-    <div className="bg-slate-50 min-h-screen font-sans text-[#050505]">
+    <div className="bg-white min-h-screen font-sans text-[#050505]">
       
       {/* Tool Header */}
       <div className="bg-white border-b border-[#E3E3E3] py-4 px-6 sticky top-16 z-40">

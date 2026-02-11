@@ -16,27 +16,27 @@ const Home: React.FC = () => {
         </div>
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.15]">
           La boîte à outils complète <br/>
-          <span className="text-[#9D9D9D]">pour votre budget Communauto.</span>
+          <span className="text-gray-400">pour votre budget Communauto.</span>
         </h1>
         <p className="text-lg md:text-xl text-[#050505] font-medium max-w-2xl mx-auto mb-8 leading-relaxed">
-          Comprenez enfin vos factures. Simulez vos trajets futurs. Optimisez votre forfait. Simple, gratuit et sécurisé.
+          Que vous découvriez Communauto ou soyez abonné depuis 5 ans, nos outils vous montrent exactement combien ça coûte.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-          <Link 
-            to="/extractor"
+          <Link
+            to="/calculator"
             className="bg-[#0066DA] hover:bg-[#0055b5] text-white px-6 py-3 rounded-[4px] font-semibold text-[15px] transition-colors"
           >
-            Analyser mes factures
+            Essayer le simulateur gratuit
           </Link>
-          <Link 
-            to="/calculator"
+          <Link
+            to="/extractor"
             className="text-[#37352f] hover:bg-[#F7F7F5] border border-[#E3E3E3] px-6 py-3 rounded-[4px] font-semibold text-[15px] transition-colors flex items-center gap-2"
           >
-            Simulateur gratuit
+            J'ai des factures à analyser
           </Link>
         </div>
 
-        <div className="mt-16 flex justify-center animate-bounce">
+        <div className="mt-16 flex justify-center animate-pulse">
             <a href="#tools" className="flex flex-col items-center gap-2 text-gray-400 hover:text-gray-900 transition-colors text-sm font-medium">
                En savoir plus
                <ChevronDown size={20} />
@@ -67,21 +67,21 @@ const Home: React.FC = () => {
                      <span className="bg-[#E3E3E3] text-[#37352f] text-[10px] uppercase font-bold px-1.5 py-0.5 rounded">Gratuit</span>
                    </h3>
                    <p className="text-[#37352f] text-sm leading-relaxed mb-6">
-                     Simulateur pour vos trajets futurs ou récurrents (ex: Épicerie, Chalet).
+                     Nommez vos trajets, configurez les récurrences, comparez les 5 forfaits en temps réel avec 6 grilles tarifaires historiques.
                    </p>
-                   
+
                    <ul className="space-y-3 text-sm text-gray-600">
                       <li className="flex items-center gap-2.5">
                           <Check size={18} className="text-green-600 shrink-0"/>
-                          <span>Comparatif des 5 forfaits</span>
+                          <span>5 forfaits comparés simultanément</span>
                       </li>
                       <li className="flex items-center gap-2.5">
                           <Repeat size={18} className="text-green-600 shrink-0"/>
-                          <span>Gestion des récurrences</span>
+                          <span>Récurrences quotidiennes, hebdo, mensuelles</span>
                       </li>
                       <li className="flex items-center gap-2.5">
                           <Split size={18} className="text-green-600 shrink-0"/>
-                          <span>Mode Flex vs Station</span>
+                          <span>Tarifs saisonniers, nuit, longue distance</span>
                       </li>
                    </ul>
                 </div>
@@ -103,7 +103,7 @@ const Home: React.FC = () => {
                      <span className="bg-[#E3E3E3] text-[#37352f] text-[10px] uppercase font-bold px-1.5 py-0.5 rounded">Gratuit</span>
                    </h3>
                    <p className="text-[#37352f] text-sm leading-relaxed mb-6">
-                     Ne copiez plus vos factures à la main. Nous extrayons et organisons tout :
+                     Importez toutes vos factures d'un coup. En quelques secondes, des années de données structurées :
                    </p>
                    
                    <ul className="space-y-3 text-sm text-gray-600">
@@ -143,21 +143,25 @@ const Home: React.FC = () => {
                      <span className="bg-[#EBEBEB] text-[#37352f] text-[10px] uppercase font-bold px-1.5 py-0.5 rounded">14.99$</span>
                    </h3>
                    <p className="text-[#37352f] text-sm leading-relaxed mb-6">
-                     Nous rejouons votre historique réel pour trouver le forfait idéal.
+                     Nous rejouons votre historique réel sous les 5 forfaits pour trouver le forfait mathématiquement optimal.
                    </p>
-                   
+
                    <ul className="space-y-3 text-sm text-gray-600">
                       <li className="flex items-center gap-2.5">
                          <History size={18} className="text-[#0066DA] shrink-0"/>
-                         <span>Replay historique complet</span>
+                         <span>Replay de chaque trajet réel</span>
                       </li>
                       <li className="flex items-center gap-2.5">
                          <Zap size={18} className="text-[#0066DA] shrink-0"/>
-                         <span>Rentabilité Flex (Illimité/20)</span>
+                         <span>Analyse Flex Pass & assurance EDC</span>
                       </li>
                       <li className="flex items-center gap-2.5">
                          <TrendingUp size={18} className="text-[#0066DA] shrink-0"/>
-                         <span>Comparatif Léo & Auto Perso</span>
+                         <span>Économies chiffrées au dollar près</span>
+                      </li>
+                      <li className="flex items-center gap-2.5">
+                         <ShieldCheck size={18} className="text-[#0066DA] shrink-0"/>
+                         <span>Garantie satisfait ou remboursé 30 jours</span>
                       </li>
                    </ul>
                 </div>

@@ -1,16 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { FileSearch, Upload, ShieldCheck, Database, FileText, Languages, Users, Eye, Cloud, TrendingUp, Wallet, BarChart3, Loader2, Check, ArrowRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { FileSearch, Upload, ShieldCheck, Database, FileText, Languages, Users, Eye, Cloud, TrendingUp, Wallet, BarChart3, Loader2, Check, ArrowRight, RefreshCw, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Extractor: React.FC = () => {
    const [activeStep, setActiveStep] = useState(1);
 
-   useEffect(() => {
-     const interval = setInterval(() => {
-       setActiveStep((prev) => (prev >= 3 ? 1 : prev + 1));
-     }, 5000); // Slower rotation to allow reading
-     return () => clearInterval(interval);
-   }, []);
 
   return (
     <div className="bg-white min-h-screen text-[#050505] font-sans">
@@ -21,7 +15,7 @@ const Extractor: React.FC = () => {
              <span className="w-2 h-2 rounded-full bg-blue-500"></span>
              <span className="text-xs font-bold text-gray-500 uppercase tracking-wide">Gratuit</span>
          </div>
-         <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-tight">
+         <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-8 leading-tight">
             Pilotez votre budget <br/>
             <span className="text-[#0066DA]">au centime près.</span>
          </h1>
@@ -29,9 +23,9 @@ const Extractor: React.FC = () => {
             Plus qu'un simple export Excel. Transformez vos factures PDF illisibles en un tableau de bord clair : évolution mensuelle, coût par trajet et analyse des frais annexes.
          </p>
          <div className="flex justify-center mb-12">
-            <button className="bg-[#050505] text-white px-8 py-4 rounded-[4px] font-bold text-lg hover:bg-[#333] transition-transform hover:scale-105 shadow-xl flex items-center gap-2">
+            <Link to="/extractor" className="bg-[#050505] text-white px-8 py-4 rounded-[4px] font-bold text-lg hover:bg-[#333] transition-transform hover:scale-105 shadow-xl flex items-center gap-2">
                Importer mes factures <ArrowRight size={20}/>
-            </button>
+            </Link>
          </div>
       </section>
 
@@ -46,7 +40,7 @@ const Extractor: React.FC = () => {
                >
                   <div className="flex items-center gap-3">
                      <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm transition-colors ${activeStep === 1 ? 'bg-[#0066DA] text-white' : 'bg-gray-200 text-gray-500'}`}>1</div>
-                     <span className={`font-bold hidden md:inline ${activeStep === 1 ? 'text-[#050505]' : 'text-gray-500'}`}>Importation</span>
+                     <span className={`font-bold text-xs md:text-base ${activeStep === 1 ? 'text-[#050505]' : 'text-gray-500'}`}>Import</span>
                   </div>
                   {activeStep === 1 && <div className="absolute bottom-0 left-0 w-full h-1 bg-[#0066DA]"></div>}
                </button>
@@ -56,7 +50,7 @@ const Extractor: React.FC = () => {
                >
                   <div className="flex items-center gap-3">
                      <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm transition-colors ${activeStep === 2 ? 'bg-[#0066DA] text-white' : 'bg-gray-200 text-gray-500'}`}>2</div>
-                     <span className={`font-bold hidden md:inline ${activeStep === 2 ? 'text-[#050505]' : 'text-gray-500'}`}>Extraction</span>
+                     <span className={`font-bold text-xs md:text-base ${activeStep === 2 ? 'text-[#050505]' : 'text-gray-500'}`}>Extraction</span>
                   </div>
                   {activeStep === 2 && <div className="absolute bottom-0 left-0 w-full h-1 bg-[#0066DA]"></div>}
                </button>
@@ -66,14 +60,14 @@ const Extractor: React.FC = () => {
                >
                   <div className="flex items-center gap-3">
                      <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm transition-colors ${activeStep === 3 ? 'bg-[#0066DA] text-white' : 'bg-gray-200 text-gray-500'}`}>3</div>
-                     <span className={`font-bold hidden md:inline ${activeStep === 3 ? 'text-[#050505]' : 'text-gray-500'}`}>Visualisation claire</span>
+                     <span className={`font-bold text-xs md:text-base ${activeStep === 3 ? 'text-[#050505]' : 'text-gray-500'}`}>Résultat</span>
                   </div>
                   {activeStep === 3 && <div className="absolute bottom-0 left-0 w-full h-1 bg-[#0066DA]"></div>}
                </button>
             </div>
 
             {/* Dynamic Content Area */}
-            <div className="p-8 md:p-12 min-h-[500px] flex items-center justify-center bg-white transition-all duration-300">
+            <div className="p-8 md:p-12 min-h-[300px] md:min-h-[500px] flex items-center justify-center bg-white transition-all duration-300">
                
                {/* STEP 1 CONTENT: Upload */}
                {activeStep === 1 && (
@@ -173,9 +167,14 @@ const Extractor: React.FC = () => {
                      <ShieldCheck size={20} />
                   </div>
                   <h3 className="font-bold text-lg mb-2">Sauvegarde Sécurisée</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">
-                     Vos factures sont stockées sur nos serveurs sécurisés. Vous ne perdrez plus jamais votre historique de trajets.
+                  <p className="text-gray-500 text-sm leading-relaxed mb-3">
+                     Vos factures sont stockées sur nos serveurs sécurisés. Vous ne perdrez plus jamais votre historique.
                   </p>
+                  <ul className="text-xs text-gray-400 space-y-1">
+                     <li>Chiffrement des données au repos</li>
+                     <li>Traitement serverless (fichier non conservé en clair)</li>
+                     <li>Suppression de vos données à tout moment</li>
+                  </ul>
                </div>
 
                {/* Card 2 */}
@@ -183,10 +182,15 @@ const Extractor: React.FC = () => {
                   <div className="w-10 h-10 bg-[#F7F7F5] rounded-lg flex items-center justify-center border border-[#E3E3E3] mb-4 text-blue-600">
                      <Wallet size={20} />
                   </div>
-                  <h3 className="font-bold text-lg mb-2">Ventilation des Frais</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">
-                     Identifiez immédiatement les "Frais divers": pénalités de retard, frais de réservation annulée, ou franchise d'accident.
+                  <h3 className="font-bold text-lg mb-2">Chaque Dollar Identifié</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed mb-3">
+                     Identifiez chaque ligne de votre facture : frais de réservation, pénalités, franchise, intérêts de retard.
                   </p>
+                  <ul className="text-xs text-gray-400 space-y-1">
+                     <li>TPS et TVQ isolées par ligne</li>
+                     <li>Prix du temps, prix du km, tarif appliqué</li>
+                     <li>Solde, paiements reçus, nouveau solde</li>
+                  </ul>
                </div>
 
                {/* Card 3 */}
@@ -233,6 +237,78 @@ const Extractor: React.FC = () => {
                   </p>
                </div>
             </div>
+         </div>
+      </section>
+
+      {/* Before / After */}
+      <section className="py-20 bg-white border-t border-[#E3E3E3]">
+         <div className="max-w-4xl mx-auto px-6">
+            <h2 className="text-3xl font-bold mb-4 text-center">Avant / Après</h2>
+            <p className="text-gray-500 text-center mb-12 max-w-2xl mx-auto">Ce que vous obtenez en important vos factures PDF.</p>
+            <div className="overflow-hidden rounded-2xl border border-[#E3E3E3]">
+               <table className="w-full text-sm">
+                  <thead>
+                     <tr className="bg-[#F7F7F5] border-b border-[#E3E3E3]">
+                        <th className="text-center p-4 font-bold text-gray-400 uppercase text-xs tracking-wide">Facture PDF Communauto</th>
+                        <th className="text-center p-4 font-bold text-[#0066DA] uppercase text-xs tracking-wide">Après extraction</th>
+                     </tr>
+                  </thead>
+                  <tbody className="divide-y divide-[#E3E3E3]">
+                     <tr className="hover:bg-[#F7F7F5] transition-colors">
+                        <td className="p-4 text-center text-gray-400">Texte brut copié-collé impossible</td>
+                        <td className="p-4 text-center font-medium">Tableaux structurés et filtrables</td>
+                     </tr>
+                     <tr className="hover:bg-[#F7F7F5] transition-colors">
+                        <td className="p-4 text-center text-gray-400">Tarifs noyés dans les lignes</td>
+                        <td className="p-4 text-center font-medium">Prix du temps, prix du km, total isolés</td>
+                     </tr>
+                     <tr className="hover:bg-[#F7F7F5] transition-colors">
+                        <td className="p-4 text-center text-gray-400">Taxes agrégées</td>
+                        <td className="p-4 text-center font-medium">TPS et TVQ détaillées par ligne</td>
+                     </tr>
+                     <tr className="hover:bg-[#F7F7F5] transition-colors">
+                        <td className="p-4 text-center text-gray-400">Pas de vue d'ensemble</td>
+                        <td className="p-4 text-center font-medium">Dashboard avec graphiques mensuels</td>
+                     </tr>
+                     <tr className="hover:bg-[#F7F7F5] transition-colors">
+                        <td className="p-4 text-center text-gray-400">Pas d'export</td>
+                        <td className="p-4 text-center font-medium">CSV / Excel en un clic</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+      </section>
+
+      {/* Bottom CTA */}
+      <section className="py-24 bg-white text-center border-t border-[#E3E3E3]">
+         <div className="max-w-2xl mx-auto px-6">
+            <h2 className="text-4xl font-bold mb-8">Importez vos factures gratuitement.</h2>
+            <Link
+               to="/extractor"
+               className="inline-flex items-center gap-2 bg-[#050505] hover:bg-[#333] text-white px-8 py-4 rounded-[4px] font-bold text-lg transition-colors shadow-xl"
+            >
+               Commencer l'import <ArrowRight size={20}/>
+            </Link>
+         </div>
+      </section>
+
+      {/* Bridge to Optimizer */}
+      <section className="py-20 bg-[#F7F7F5] border-t border-[#E3E3E3] text-center">
+         <div className="max-w-3xl mx-auto px-6">
+            <div className="w-12 h-12 bg-[#0066DA] rounded-lg flex items-center justify-center mx-auto mb-6 text-white">
+               <Sparkles size={24}/>
+            </div>
+            <h2 className="text-2xl font-bold mb-4">Vos données sont prêtes. Découvrez vos économies.</h2>
+            <p className="text-gray-500 mb-8 max-w-xl mx-auto">
+               L'Optimiseur rejoue votre historique sous les 5 forfaits et vous révèle combien vous pourriez économiser. À partir de 14.99$.
+            </p>
+            <Link
+               to="/optimizer"
+               className="inline-flex items-center gap-2 text-[#0066DA] font-bold hover:underline"
+            >
+               Découvrir l'Optimiseur <ArrowRight size={16}/>
+            </Link>
          </div>
       </section>
 

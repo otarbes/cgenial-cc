@@ -1,16 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowRight, Calculator as CalcIcon, CheckCircle2, Zap, LayoutGrid, Clock, PiggyBank, Repeat, Split, RefreshCw, MapPin, Calendar, Check, MousePointer2 } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowRight, Calculator as CalcIcon, CheckCircle2, Zap, LayoutGrid, Clock, PiggyBank, Repeat, Split, RefreshCw, MapPin, Calendar, Check, MousePointer2, FileSearch, Table2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Calculator: React.FC = () => {
   const [activeStep, setActiveStep] = useState(1);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveStep((prev) => (prev >= 3 ? 1 : prev + 1));
-    }, 5000); 
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <div className="bg-white min-h-screen text-[#050505] font-sans">
@@ -20,7 +14,7 @@ const Calculator: React.FC = () => {
              <span className="w-2 h-2 rounded-full bg-green-500"></span>
              <span className="text-xs font-bold text-gray-500 uppercase tracking-wide">Gratuit & Sans inscription</span>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-8 leading-tight">
              Simulez vos trajets <br/>
              <span className="text-[#0066DA]">au dollar près.</span>
           </h1>
@@ -45,28 +39,28 @@ const Calculator: React.FC = () => {
                <button onClick={() => setActiveStep(1)} className={`py-4 md:py-6 px-4 text-left relative transition-colors ${activeStep === 1 ? 'bg-white' : 'bg-[#FAFAFA] hover:bg-[#F5F5F5]'}`}>
                   <div className="flex items-center gap-3">
                      <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm transition-colors ${activeStep === 1 ? 'bg-[#0066DA] text-white' : 'bg-gray-200 text-gray-500'}`}>1</div>
-                     <span className={`font-bold hidden md:inline ${activeStep === 1 ? 'text-[#050505]' : 'text-gray-500'}`}>Définition</span>
+                     <span className={`font-bold text-xs md:text-base ${activeStep === 1 ? 'text-[#050505]' : 'text-gray-500'}`}>Définition</span>
                   </div>
                   {activeStep === 1 && <div className="absolute bottom-0 left-0 w-full h-1 bg-[#0066DA]"></div>}
                </button>
                <button onClick={() => setActiveStep(2)} className={`py-4 md:py-6 px-4 text-left relative transition-colors ${activeStep === 2 ? 'bg-white' : 'bg-[#FAFAFA] hover:bg-[#F5F5F5]'}`}>
                   <div className="flex items-center gap-3">
                      <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm transition-colors ${activeStep === 2 ? 'bg-[#0066DA] text-white' : 'bg-gray-200 text-gray-500'}`}>2</div>
-                     <span className={`font-bold hidden md:inline ${activeStep === 2 ? 'text-[#050505]' : 'text-gray-500'}`}>Moteur</span>
+                     <span className={`font-bold text-xs md:text-base ${activeStep === 2 ? 'text-[#050505]' : 'text-gray-500'}`}>Moteur</span>
                   </div>
                   {activeStep === 2 && <div className="absolute bottom-0 left-0 w-full h-1 bg-[#0066DA]"></div>}
                </button>
                <button onClick={() => setActiveStep(3)} className={`py-4 md:py-6 px-4 text-left relative transition-colors ${activeStep === 3 ? 'bg-white' : 'bg-[#FAFAFA] hover:bg-[#F5F5F5]'}`}>
                   <div className="flex items-center gap-3">
                      <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm transition-colors ${activeStep === 3 ? 'bg-[#0066DA] text-white' : 'bg-gray-200 text-gray-500'}`}>3</div>
-                     <span className={`font-bold hidden md:inline ${activeStep === 3 ? 'text-[#050505]' : 'text-gray-500'}`}>Résultat</span>
+                     <span className={`font-bold text-xs md:text-base ${activeStep === 3 ? 'text-[#050505]' : 'text-gray-500'}`}>Résultat</span>
                   </div>
                   {activeStep === 3 && <div className="absolute bottom-0 left-0 w-full h-1 bg-[#0066DA]"></div>}
                </button>
             </div>
 
             {/* Dynamic Content */}
-            <div className="p-8 md:p-12 min-h-[450px] flex items-center justify-center bg-white transition-all duration-300">
+            <div className="p-8 md:p-12 min-h-[300px] md:min-h-[450px] flex items-center justify-center bg-white transition-all duration-300">
                
                {/* STEP 1: Input Form Visual */}
                {activeStep === 1 && (
@@ -176,9 +170,14 @@ const Calculator: React.FC = () => {
                       <Repeat size={20}/>
                    </div>
                    <h3 className="font-bold text-lg mb-2">Gestion des Récurrences</h3>
-                   <p className="text-sm text-gray-500 leading-relaxed">
-                      Définissez un trajet comme "Hebdomadaire" ou "Mensuel". L'outil projette automatiquement le coût sur une année complète.
+                   <p className="text-sm text-gray-500 leading-relaxed mb-3">
+                      Définissez un trajet comme récurrent. L'outil projette automatiquement le coût sur une année complète.
                    </p>
+                   <ul className="text-xs text-gray-400 space-y-1">
+                      <li>Quotidien, hebdomadaire, mensuel</li>
+                      <li>Choix des jours de la semaine</li>
+                      <li>Fin par date ou par nombre d'occurrences</li>
+                   </ul>
                 </div>
 
                 {/* Feature 2 */}
@@ -219,9 +218,9 @@ const Calculator: React.FC = () => {
                    <div className="w-10 h-10 bg-purple-50 text-purple-600 rounded-lg flex items-center justify-center mb-4">
                       <Zap size={20}/>
                    </div>
-                   <h3 className="font-bold text-lg mb-2">Analyse Flex Pass</h3>
+                   <h3 className="font-bold text-lg mb-2">Calcul Flex par Trajet</h3>
                    <p className="text-sm text-gray-500 leading-relaxed">
-                      L'outil détecte si l'abonnement "Laissez-passer Flex" (Illimité ou 20 trajets) est rentable selon votre volume.
+                      Chaque trajet est calculé en mode Station et Flex. Le mode "le moins cher" sélectionne automatiquement le meilleur véhicule.
                    </p>
                 </div>
 
@@ -230,11 +229,64 @@ const Calculator: React.FC = () => {
                    <div className="w-10 h-10 bg-yellow-50 text-yellow-600 rounded-lg flex items-center justify-center mb-4">
                       <Clock size={20}/>
                    </div>
-                   <h3 className="font-bold text-lg mb-2">Détails subtils</h3>
-                   <p className="text-sm text-gray-500 leading-relaxed">
-                      Prise en compte des tarifs de nuit (gratuits sur certains forfaits) et des tarifs longue distance.
+                   <h3 className="font-bold text-lg mb-2">Tarification de Précision</h3>
+                   <p className="text-sm text-gray-500 leading-relaxed mb-3">
+                      Bien plus qu'une estimation : notre moteur intègre chaque subtilité tarifaire de Communauto.
                    </p>
+                   <ul className="text-xs text-gray-400 space-y-1">
+                      <li>6 grilles tarifaires (avril 2021 à aujourd'hui)</li>
+                      <li>4 formules : régulier, aller-retour, longue distance, travail</li>
+                      <li>Tarifs saisonniers (15 juin — 15 octobre)</li>
+                      <li>Heures de nuit gratuites (Éco+ / Éco Extra)</li>
+                      <li>Suppléments week-end intégrés</li>
+                   </ul>
                 </div>
+             </div>
+          </div>
+       </section>
+
+       {/* Comparison: Us vs Communauto.com */}
+       <section className="py-20 bg-white border-t border-[#E3E3E3]">
+          <div className="max-w-4xl mx-auto px-6">
+             <h2 className="text-3xl font-bold mb-4 text-center">Pourquoi ce calculateur est différent</h2>
+             <p className="text-gray-500 text-center mb-12 max-w-2xl mx-auto">Le simulateur officiel de Communauto est limité à un seul trajet. Le nôtre va beaucoup plus loin.</p>
+             <div className="overflow-hidden rounded-2xl border border-[#E3E3E3]">
+                <table className="w-full text-sm">
+                   <thead>
+                      <tr className="bg-[#F7F7F5] border-b border-[#E3E3E3]">
+                         <th className="text-left p-4 font-bold text-gray-400 uppercase text-xs tracking-wide w-1/3"></th>
+                         <th className="text-center p-4 font-bold text-gray-400 uppercase text-xs tracking-wide">Communauto.com</th>
+                         <th className="text-center p-4 font-bold text-[#0066DA] uppercase text-xs tracking-wide">Cgénial</th>
+                      </tr>
+                   </thead>
+                   <tbody className="divide-y divide-[#E3E3E3]">
+                      <tr className="hover:bg-[#F7F7F5] transition-colors">
+                         <td className="p-4 font-medium">Nombre de trajets</td>
+                         <td className="p-4 text-center text-gray-400">1 seul à la fois</td>
+                         <td className="p-4 text-center font-medium">Multi-trajets avec nommage</td>
+                      </tr>
+                      <tr className="hover:bg-[#F7F7F5] transition-colors">
+                         <td className="p-4 font-medium">Récurrence</td>
+                         <td className="p-4 text-center text-gray-400">Non</td>
+                         <td className="p-4 text-center font-medium">Quotidien, hebdo, mensuel</td>
+                      </tr>
+                      <tr className="hover:bg-[#F7F7F5] transition-colors">
+                         <td className="p-4 font-medium">Forfaits comparés</td>
+                         <td className="p-4 text-center text-gray-400">1 à la fois</td>
+                         <td className="p-4 text-center font-medium">5 simultanément</td>
+                      </tr>
+                      <tr className="hover:bg-[#F7F7F5] transition-colors">
+                         <td className="p-4 font-medium">Précision tarifaire</td>
+                         <td className="p-4 text-center text-gray-400">Estimation simple</td>
+                         <td className="p-4 text-center font-medium">6 grilles, tarifs saisonniers</td>
+                      </tr>
+                      <tr className="hover:bg-[#F7F7F5] transition-colors">
+                         <td className="p-4 font-medium">Recommandation</td>
+                         <td className="p-4 text-center text-gray-400">Non</td>
+                         <td className="p-4 text-center font-medium">Forfait optimal identifié</td>
+                      </tr>
+                   </tbody>
+                </table>
              </div>
           </div>
        </section>
@@ -248,6 +300,25 @@ const Calculator: React.FC = () => {
                 className="inline-flex items-center gap-2 bg-[#0066DA] hover:bg-[#0055b5] text-white px-8 py-4 rounded-[4px] font-bold text-lg transition-colors shadow-lg shadow-blue-100"
              >
                 Démarrer le simulateur <ArrowRight size={20}/>
+             </Link>
+          </div>
+       </section>
+
+       {/* Bridge to Extractor */}
+       <section className="py-20 bg-[#F7F7F5] border-t border-[#E3E3E3] text-center">
+          <div className="max-w-3xl mx-auto px-6">
+             <div className="w-12 h-12 bg-white border border-[#E3E3E3] rounded-lg flex items-center justify-center mx-auto mb-6 text-[#0066DA]">
+                <FileSearch size={24}/>
+             </div>
+             <h2 className="text-2xl font-bold mb-4">Le simulateur estime. Vos factures prouvent.</h2>
+             <p className="text-gray-500 mb-8 max-w-xl mx-auto">
+                Importez vos factures Communauto et découvrez vos économies exactes basées sur votre historique réel de trajets.
+             </p>
+             <Link
+                to="/extractor"
+                className="inline-flex items-center gap-2 text-[#0066DA] font-bold hover:underline"
+             >
+                Analyser mes vraies factures <ArrowRight size={16}/>
              </Link>
           </div>
        </section>
