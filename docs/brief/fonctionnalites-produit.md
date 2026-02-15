@@ -21,7 +21,6 @@ Simulateur qui compare les 5 forfaits Communauto a partir de trajets hypothetiqu
 - Les occurrences sont generees automatiquement pour le calcul
 
 **Calcul en temps reel**
-- Recalcul automatique a chaque modification de trajet (300ms de debounce)
 - Etat de chargement visible pendant le calcul
 - Les resultats precedents restent affiches en grise pendant le recalcul
 

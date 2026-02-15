@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cgénial — Concept 3 Raffiné</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: #0f0f0f;
+    color: #e0e0e0;
+    min-height: 100vh;
+    padding: 40px 20px 80px;
+  }
+  h1 { text-align: center; font-size: 1.8rem; margin-bottom: 6px; color: #fff; }
+  .subtitle { text-align: center; color: #888; margin-bottom: 50px; font-size: 0.95rem; }
+  .section-title {
+    text-align: center; font-size: 1.1rem; color: #FFD23F;
+    margin: 60px 0 30px; text-transform: uppercase; letter-spacing: 3px; font-weight: 600;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 36px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .card {
+    background: #1a1a1a;
+    border-radius: 20px;
+    padding: 36px 28px 28px;
+    text-align: center;
+    border: 1px solid #2a2a2a;
+    transition: border-color 0.3s;
+  }
+  .card:hover { border-color: #FFD23F44; }
+  .card h3 {
+    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px;
+    color: #777; margin-bottom: 24px;
+  }
+  .logo-area {
+    display: flex; align-items: center; justify-content: center;
+    min-height: 200px; margin-bottom: 16px;
+  }
+  .card p { color: #999; font-size: 0.85rem; line-height: 1.5; }
+  .row {
+    display: flex; gap: 24px; justify-content: center; flex-wrap: wrap;
+    max-width: 1100px; margin: 0 auto;
+  }
+  .mini-card {
+    background: #1a1a1a; border-radius: 16px; padding: 24px;
+    text-align: center; border: 1px solid #2a2a2a; flex: 1; min-width: 160px; max-width: 220px;
+  }
+  .mini-card.light { background: #f5f5f5; border-color: #ddd; }
+  .mini-card p { color: #888; font-size: 0.78rem; margin-top: 8px; }
+  .mini-card.light p { color: #555; }
+  .declinaisons-row {
+    display: flex; gap: 28px; justify-content: center; flex-wrap: wrap;
+    max-width: 1100px; margin: 0 auto;
+  }
+  .decli-card {
+    background: #1a1a1a; border-radius: 16px; padding: 28px 20px 20px;
+    text-align: center; border: 1px solid #2a2a2a; width: 200px;
+  }
+  .decli-card h4 {
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.5px;
+    color: #666; margin-bottom: 16px;
+  }
+  .decli-card p { color: #888; font-size: 0.75rem; margin-top: 10px; }
+</style>
+</head>
+<body>
+
+<h1>Cgénial — Concept "L'Idée Lapin"</h1>
+<p class="subtitle">Variations et raffinements du concept ampoule + oreilles de lapin</p>
+
+<!-- === VARIATIONS PRINCIPALES === -->
+<div class="section-title">Variations du logo</div>
+
+<div class="grid">
+
+  <!-- V1: Ligne fine, élégant -->
+  <div class="card">
+    <h3>V1 — Ligne fine</h3>
+    <div class="logo-area">
+      <svg width="160" height="200" viewBox="0 0 160 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Oreille gauche -->
+        <path d="M58 60 Q50 22 56 6 Q59 -2 63 6 Q70 22 66 60" fill="none" stroke="#FFD23F" stroke-width="3" stroke-linecap="round"/>
+        <!-- Oreille droite -->
+        <path d="M94 60 Q87 22 93 6 Q96 -2 100 6 Q107 22 102 60" fill="none" stroke="#FFD23F" stroke-width="3" stroke-linecap="round"/>
+        <!-- Intérieur oreilles -->
+        <path d="M60 56 Q54 26 59 12 Q60 7 62 12 Q66 26 64 56" fill="none" stroke="#FFE88A" stroke-width="1.2"/>
+        <path d="M96 56 Q90 26 95 12 Q97 7 99 12 Q103 26 100 56" fill="none" stroke="#FFE88A" stroke-width="1.2"/>
+        <!-- Ampoule -->
+        <path d="M80 58 C100 58 112 72 112 90 C112 108 100 118 94 124 L66 124 C60 118 48 108 48 90 C48 72 60 58 80 58 Z" fill="none" stroke="#FFD23F" stroke-width="3"/>
+        <!-- Filament stylisé -->
+        <path d="M70 88 Q75 98 80 88 Q85 98 90 88" fill="none" stroke="#FFD23F" stroke-width="2" stroke-linecap="round"/>
+        <!-- Culot -->
+        <line x1="66" y1="130" x2="94" y2="130" stroke="#FFD23F" stroke-width="2.5"/>
+        <line x1="68" y1="136" x2="92" y2="136" stroke="#FFD23F" stroke-width="2.5"/>
+        <path d="M72 142 L80 150 L88 142" fill="none" stroke="#FFD23F" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- Texte -->
+        <text x="80" y="176" text-anchor="middle" font-family="-apple-system, sans-serif" font-weight="700" font-size="22" fill="#fff">Cgénial</text>
+        <text x="80" y="194" text-anchor="middle" font-family="-apple-system, sans-serif" font-weight="400" font-size="9" fill="#FFD23F" letter-spacing="4">AUTOPARTAGE</text>
+      </svg>
+    </div>
+    <p>Trait fin et élégant. Ampoule plus réaliste. Posé et professionnel.</p>
+  </div>
+
+  <!-- V2: Rempli, bold -->
+  <div class="card">
+    <h3>V2 — Filled / Bold</h3>
+    <div class="logo-area">
+      <svg width="160" height="200" viewBox="0 0 160 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Oreille gauche remplie -->
+        <path d="M58 62 Q50 22 56 6 Q59 -2 63 6 Q70 22 66 62 Z" fill="#FFD23F"/>
+        <!-- Intérieur oreille gauche -->
+        <path d="M60 58 Q54 26 59 12 Q60 7 62 12 Q66 26 64 58 Z" fill="#FFF0C0"/>
+        <!-- Oreille droite remplie -->
+        <path d="M94 62 Q87 22 93 6 Q96 -2 100 6 Q107 22 102 62 Z" fill="#FFD23F"/>
+        <!-- Intérieur oreille droite -->
+        <path d="M96 58 Q90 26 95 12 Q97 7 99 12 Q103 26 100 58 Z" fill="#FFF0C0"/>
+        <!-- Ampoule remplie -->
+        <path d="M80 58 C102 58 114 74 114 92 C114 110 102 120 96 126 L64 126 C58 120 46 110 46 92 C46 74 58 58 80 58 Z" fill="#FFD23F"/>
+        <!-- Reflet -->
+        <path d="M60 80 C60 70 68 62 80 62 C84 62 88 64 90 66" fill="none" stroke="#FFF5D6" stroke-width="3" stroke-linecap="round"/>
+        <!-- Culot -->
+        <rect x="64" y="128" width="32" height="6" rx="2" fill="#E8BC30"/>
+        <rect x="66" y="136" width="28" height="4" rx="2" fill="#E8BC30"/>
+        <path d="M72 142 L80 150 L88 142" fill="#E8BC30" stroke="none"/>
+        <!-- Texte -->
+        <text x="80" y="176" text-anchor="middle" font-family="-apple-system, sans-serif" font-weight="800" font-size="24" fill="#fff">Cgénial</text>
+        <text x="80" y="194" text-anchor="middle" font-family="-apple-system, sans-serif" font-weight="500" font-size="9" fill="#FFD23F" letter-spacing="4">AUTOPARTAGE</text>
+      </svg>
+    </div>
+    <p>Aplats de couleur, plus impactant. Style app/startup. Fonctionne bien en icône.</p>
+  </div>
+
+  <!-- V3: Géométrique/Flat -->
+  <div class="card">
+    <h3>V3 — Géométrique</h3>
+    <div class="logo-area">
+      <svg width="160" height="200" viewBox="0 0 160 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Oreille gauche géométrique -->
+        <rect x="56" y="8" width="12" height="54" rx="6" fill="#FFD23F"/>
+        <rect x="58" y="14" width="8" height="42" rx="4" fill="#FFF0C0"/>
+        <!-- Oreille droite géométrique -->
+        <rect x="92" y="8" width="12" height="54" rx="6" fill="#FFD23F"/>
+        <rect x="94" y="14" width="8" height="42" rx="4" fill="#FFF0C0"/>
+        <!-- Ampoule = cercle parfait -->
+        <circle cx="80" cy="90" r="34" fill="#FFD23F"/>
+        <!-- Reflet -->
+        <circle cx="70" cy="80" r="8" fill="#FFF5D6" opacity="0.6"/>
+        <!-- Culot rectangulaire -->
+        <rect x="68" y="122" width="24" height="8" rx="3" fill="#E8BC30"/>
+        <rect x="72" y="132" width="16" height="6" rx="3" fill="#E8BC30"/>
+        <!-- Texte -->
+        <text x="80" y="164" text-anchor="middle" font-family="-apple-system, sans-serif" font-weight="800" font-size="24" fill="#fff">Cgénial</text>
+        <text x="80" y="182" text-anchor="middle" font-family="-apple-system, sans-serif" font-weight="500" font-size="9" fill="#FFD23F" letter-spacing="4">AUTOPARTAGE</text>
+      </svg>
+    </div>
+    <p>Formes géométriques pures. Ultra lisible en petit. Parfait pour favicon et icône mobile.</p>
+  </div>
+
+  <!-- V4: Avec étoiles/magie -->
+  <div class="card">
+    <h3>V4 — Magie + Sparkles</h3>
+    <div class="logo-area">
+      <svg width="160" height="200" viewBox="0 0 160 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Sparkles -->
+        <path d="M30 50 L32 44 L34 50 L40 52 L34 54 L32 60 L30 54 L24 52 Z" fill="#FFD23F" opacity="0.6"/>
+        <path d="M130 40 L131.5 36 L133 40 L137 41.5 L133 43 L131.5 47 L130 43 L126 41.5 Z" fill="#FFD23F" opacity="0.5"/>
+        <path d="M38 100 L39 97 L40 100 L43 101 L40 102 L39 105 L38 102 L35 101 Z" fill="#FFD23F" opacity="0.4"/>
+        <path d="M126 84 L127.5 79 L129 84 L134 85.5 L129 87 L127.5 92 L126 87 L121 85.5 Z" fill="#FFD23F" opacity="0.5"/>
+        <!-- Oreille gauche -->
+        <path d="M58 60 Q50 22 56 6 Q59 -2 63 6 Q70 22 66 60" fill="none" stroke="#FFD23F" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M60 56 Q54 26 59 12 Q60 7 62 12 Q66 26 64 56" fill="none" stroke="#FFE88A" stroke-width="1.5"/>
+        <!-- Oreille droite -->
+        <path d="M94 60 Q87 22 93 6 Q96 -2 100 6 Q107 22 102 60" fill="none" stroke="#FFD23F" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M96 56 Q90 26 95 12 Q97 7 99 12 Q103 26 100 56" fill="none" stroke="#FFE88A" stroke-width="1.5"/>
+        <!-- Ampoule -->
+        <circle cx="80" cy="88" r="32" fill="none" stroke="#FFD23F" stroke-width="3.5"/>
+        <!-- Filament étoile -->
+        <path d="M80 78 L82 84 L88 84 L83 88 L85 94 L80 90 L75 94 L77 88 L72 84 L78 84 Z" fill="#FFD23F"/>
+        <!-- Culot -->
+        <line x1="66" y1="122" x2="94" y2="122" stroke="#FFD23F" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="68" y1="128" x2="92" y2="128" stroke="#FFD23F" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M74 134 L80 140 L86 134" fill="none" stroke="#FFD23F" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- Rayons lumineux -->
+        <line x1="38" y1="88" x2="44" y2="88" stroke="#FFD23F" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+        <line x1="116" y1="88" x2="122" y2="88" stroke="#FFD23F" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+        <line x1="80" y1="52" x2="80" y2="48" stroke="#FFD23F" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+        <!-- Texte -->
+        <text x="80" y="168" text-anchor="middle" font-family="-apple-system, sans-serif" font-weight="700" font-size="22" fill="#fff">Cgénial</text>
+        <text x="80" y="186" text-anchor="middle" font-family="-apple-system, sans-serif" font-weight="400" font-size="9" fill="#FFD23F" letter-spacing="4">AUTOPARTAGE</text>
+      </svg>
+    </div>
+    <p>Ajout d'étoiles/sparkles autour pour renforcer le côté "eurêka!". Plus expressif et joyeux.</p>
+  </div>
+
+</div>
+
+<!-- === DÉCLINAISONS PAR PRODUIT === -->
+<div class="section-title" style="margin-top:70px">Déclinaisons par micro-produit</div>
+
+<div class="declinaisons-row">
+  <!-- Autopartage -->
+  <div class="decli-card">
+    <h4>Autopartage</h4>
+    <svg width="80" height="100" viewBox="0 0 80 100" fill="none">
+      <path d="M30 32 Q26 14 30 4 Q31.5 0 33.5 4 Q37 14 35 32 Z" fill="#FFD23F"/>
+      <path d="M45 32 Q41 14 45 4 Q46.5 0 48.5 4 Q52 14 50 32 Z" fill="#FFD23F"/>
+      <circle cx="40" cy="50" r="20" fill="#FFD23F"/>
+      <!-- Petit volant -->
+      <circle cx="40" cy="50" r="8" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+      <line x1="40" y1="42" x2="40" y2="58" stroke="#1a1a1a" stroke-width="1.5"/>
+      <line x1="32" y1="50" x2="48" y2="50" stroke="#1a1a1a" stroke-width="1.5"/>
+      <rect x="32" y="69" width="16" height="5" rx="2" fill="#E8BC30"/>
+      <text x="40" y="92" text-anchor="middle" font-size="8" fill="#FFD23F" font-weight="600" letter-spacing="1">AUTO</text>
+    </svg>
+    <p>Volant dans l'ampoule</p>
+  </div>
+
+  <!-- Fiches de paie -->
+  <div class="decli-card">
+    <h4>Fiches de paie</h4>
+    <svg width="80" height="100" viewBox="0 0 80 100" fill="none">
+      <path d="M30 32 Q26 14 30 4 Q31.5 0 33.5 4 Q37 14 35 32 Z" fill="#7C5CFC"/>
+      <path d="M45 32 Q41 14 45 4 Q46.5 0 48.5 4 Q52 14 50 32 Z" fill="#7C5CFC"/>
+      <circle cx="40" cy="50" r="20" fill="#7C5CFC"/>
+      <!-- Dollar / argent -->
+      <text x="40" y="56" text-anchor="middle" font-size="20" fill="#fff" font-weight="700">$</text>
+      <rect x="32" y="69" width="16" height="5" rx="2" fill="#6A4AE0"/>
+      <text x="40" y="92" text-anchor="middle" font-size="8" fill="#7C5CFC" font-weight="600" letter-spacing="1">PAIE</text>
+    </svg>
+    <p>Symbole $ dans l'ampoule</p>
+  </div>
+
+  <!-- Bébé -->
+  <div class="decli-card">
+    <h4>Prix Bébé</h4>
+    <svg width="80" height="100" viewBox="0 0 80 100" fill="none">
+      <path d="M30 32 Q26 14 30 4 Q31.5 0 33.5 4 Q37 14 35 32 Z" fill="#FF6B9D"/>
+      <path d="M45 32 Q41 14 45 4 Q46.5 0 48.5 4 Q52 14 50 32 Z" fill="#FF6B9D"/>
+      <circle cx="40" cy="50" r="20" fill="#FF6B9D"/>
+      <!-- Coeur bébé -->
+      <path d="M40 56 C40 56 32 48 32 44 C32 40 36 38 40 42 C44 38 48 40 48 44 C48 48 40 56 40 56 Z" fill="#fff"/>
+      <rect x="32" y="69" width="16" height="5" rx="2" fill="#E0558A"/>
+      <text x="40" y="92" text-anchor="middle" font-size="8" fill="#FF6B9D" font-weight="600" letter-spacing="1">BÉBÉ</text>
+    </svg>
+    <p>Coeur dans l'ampoule</p>
+  </div>
+
+  <!-- Marque ombrelle -->
+  <div class="decli-card">
+    <h4>Marque ombrelle</h4>
+    <svg width="80" height="100" viewBox="0 0 80 100" fill="none">
+      <path d="M30 32 Q26 14 30 4 Q31.5 0 33.5 4 Q37 14 35 32 Z" fill="#FFD23F"/>
+      <path d="M31 30 Q28 16 31 8 Q32 5 33 8 Q35 16 34 30 Z" fill="#FFF0C0"/>
+      <path d="M45 32 Q41 14 45 4 Q46.5 0 48.5 4 Q52 14 50 32 Z" fill="#FFD23F"/>
+      <path d="M46 30 Q43 16 46 8 Q47 5 48 8 Q50 16 49 30 Z" fill="#FFF0C0"/>
+      <circle cx="40" cy="50" r="20" fill="#FFD23F"/>
+      <circle cx="35" cy="46" r="4" fill="#FFF5D6" opacity="0.6"/>
+      <rect x="32" y="69" width="16" height="5" rx="2" fill="#E8BC30"/>
+      <rect x="34" y="76" width="12" height="3" rx="1.5" fill="#E8BC30"/>
+      <text x="40" y="96" text-anchor="middle" font-size="7" fill="#FFD23F" font-weight="700" letter-spacing="0.5">CGÉNIAL</text>
+    </svg>
+    <p>Logo principal neutre</p>
+  </div>
+</div>
+
+<!-- === FOND CLAIR === -->
+<div class="section-title" style="margin-top:70px">Versions fond clair</div>
+
+<div class="row" style="margin-bottom: 40px;">
+  <div class="mini-card light">
+    <svg width="100" height="120" viewBox="0 0 100 120" fill="none">
+      <path d="M38 38 Q32 16 37 4 Q39 -1 41 4 Q46 16 43 38 Z" fill="#FFD23F"/>
+      <path d="M57 38 Q52 16 57 4 Q59 -1 61 4 Q66 16 63 38 Z" fill="#FFD23F"/>
+      <circle cx="50" cy="58" r="22" fill="#FFD23F"/>
+      <circle cx="44" cy="52" r="5" fill="#FFF5D6" opacity="0.5"/>
+      <rect x="40" y="79" width="20" height="5" rx="2" fill="#E8BC30"/>
+      <rect x="42" y="86" width="16" height="4" rx="2" fill="#E8BC30"/>
+      <text x="50" y="108" text-anchor="middle" font-size="14" fill="#222" font-weight="800">Cgénial</text>
+    </svg>
+    <p>Fond blanc — filled</p>
+  </div>
+  <div class="mini-card light">
+    <svg width="100" height="120" viewBox="0 0 100 120" fill="none">
+      <path d="M38 38 Q32 16 37 4 Q39 -1 41 4 Q46 16 43 38" fill="none" stroke="#E8A800" stroke-width="3" stroke-linecap="round"/>
+      <path d="M57 38 Q52 16 57 4 Q59 -1 61 4 Q66 16 63 38" fill="none" stroke="#E8A800" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="50" cy="58" r="22" fill="none" stroke="#E8A800" stroke-width="3"/>
+      <path d="M42 54 Q46 62 50 54 Q54 62 58 54" fill="none" stroke="#E8A800" stroke-width="2" stroke-linecap="round"/>
+      <line x1="40" y1="82" x2="60" y2="82" stroke="#E8A800" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="42" y1="88" x2="58" y2="88" stroke="#E8A800" stroke-width="2.5" stroke-linecap="round"/>
+      <text x="50" y="108" text-anchor="middle" font-size="14" fill="#222" font-weight="800">Cgénial</text>
+    </svg>
+    <p>Fond blanc — ligne</p>
+  </div>
+  <div class="mini-card" style="background:#FFD23F; border-color:#E8BC30;">
+    <svg width="100" height="120" viewBox="0 0 100 120" fill="none">
+      <path d="M38 38 Q32 16 37 4 Q39 -1 41 4 Q46 16 43 38" fill="none" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round"/>
+      <path d="M57 38 Q52 16 57 4 Q59 -1 61 4 Q66 16 63 38" fill="none" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="50" cy="58" r="22" fill="none" stroke="#1a1a1a" stroke-width="3"/>
+      <path d="M42 54 Q46 62 50 54 Q54 62 58 54" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/>
+      <line x1="40" y1="82" x2="60" y2="82" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="42" y1="88" x2="58" y2="88" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+      <text x="50" y="108" text-anchor="middle" font-size="14" fill="#1a1a1a" font-weight="800">Cgénial</text>
+    </svg>
+    <p style="color:#1a1a1a99;">Monochrome sur jaune</p>
+  </div>
+  <div class="mini-card">
+    <svg width="100" height="120" viewBox="0 0 100 120" fill="none">
+      <path d="M38 38 Q32 16 37 4 Q39 -1 41 4 Q46 16 43 38" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+      <path d="M57 38 Q52 16 57 4 Q59 -1 61 4 Q66 16 63 38" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="50" cy="58" r="22" fill="none" stroke="#fff" stroke-width="3"/>
+      <path d="M42 54 Q46 62 50 54 Q54 62 58 54" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+      <line x1="40" y1="82" x2="60" y2="82" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="42" y1="88" x2="58" y2="88" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+      <text x="50" y="108" text-anchor="middle" font-size="14" fill="#fff" font-weight="800">Cgénial</text>
+    </svg>
+    <p>Blanc sur sombre</p>
+  </div>
+</div>
+
+<!-- === FAVICON / ICÔNE APP === -->
+<div class="section-title" style="margin-top:50px">Favicon & Icône app</div>
+
+<div class="row">
+  <div class="mini-card">
+    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+      <rect width="48" height="48" rx="10" fill="#FFD23F"/>
+      <path d="M16 20 Q14 10 16 4 Q17 2 18.5 4 Q20 10 19 20 Z" fill="#1a1a1a"/>
+      <path d="M29 20 Q27 10 29 4 Q30 2 31.5 4 Q33 10 32 20 Z" fill="#1a1a1a"/>
+      <circle cx="24" cy="28" r="11" fill="#1a1a1a"/>
+      <circle cx="21" cy="25" r="3" fill="#FFD23F" opacity="0.3"/>
+    </svg>
+    <p>Icône app (jaune)</p>
+  </div>
+  <div class="mini-card">
+    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+      <rect width="48" height="48" rx="10" fill="#1a1a1a"/>
+      <path d="M16 20 Q14 10 16 4 Q17 2 18.5 4 Q20 10 19 20 Z" fill="#FFD23F"/>
+      <path d="M29 20 Q27 10 29 4 Q30 2 31.5 4 Q33 10 32 20 Z" fill="#FFD23F"/>
+      <circle cx="24" cy="28" r="11" fill="#FFD23F"/>
+      <circle cx="21" cy="25" r="3" fill="#FFF5D6" opacity="0.4"/>
+    </svg>
+    <p>Icône app (sombre)</p>
+  </div>
+  <div class="mini-card">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M8 10 Q7 5 8 2 Q8.5 1 9.2 2 Q10 5 9.5 10 Z" fill="#FFD23F"/>
+      <path d="M14.5 10 Q13.5 5 14.5 2 Q15 1 15.7 2 Q16.5 5 16 10 Z" fill="#FFD23F"/>
+      <circle cx="12" cy="14" r="6" fill="#FFD23F"/>
+    </svg>
+    <p style="margin-top:16px">Favicon 16px</p>
+  </div>
+</div>
+
+</body>
+</html>

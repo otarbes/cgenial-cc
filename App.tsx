@@ -3,12 +3,11 @@ import { HashRouter as Router, Routes, Route, ScrollRestoration } from 'react-ro
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import Calculator from './pages/Calculator';
+import Calculator from './pages/CalculatorNotion';
 import CalculatorTool from './pages/CalculatorTool';
-import Extractor from './pages/Extractor';
-import Optimizer from './pages/Optimizer';
+import Extractor from './pages/ExtractorNotion';
+import Optimizer from './pages/OptimizerNotion';
 import FAQ from './pages/FAQ';
-import CalculatorNotion from './pages/CalculatorNotion';
 
 const ScrollToTop = () => {
   React.useEffect(() => {
@@ -27,7 +26,6 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/calculator" element={<Calculator />} />
-            <Route path="/calculator/notion" element={<CalculatorNotion />} />
             <Route path="/calculator/tool" element={<CalculatorTool />} />
             <Route path="/extractor" element={<Extractor />} />
             <Route path="/optimizer" element={<Optimizer />} />
