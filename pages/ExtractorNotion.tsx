@@ -9,7 +9,7 @@ const faqItems = [
   },
   {
     q: "Mes factures sont-elles stockées de façon sécurisée\u00a0?",
-    a: "Oui. Les fichiers sont chiffrés au repos et traités via un service serverless — le PDF n'est jamais conservé en clair. Vous pouvez supprimer vos données à tout moment depuis votre compte."
+    a: "Oui. Vos PDF sont conservés sur nos serveurs sécurisés et chiffrés au repos. Vous retrouvez le PDF original associé à chaque trajet directement depuis votre compte — toutes vos infos sont centralisées. Vous pouvez supprimer vos données à tout moment."
   },
   {
     q: "Que faire si une facture échoue lors de l'import\u00a0?",
@@ -537,6 +537,251 @@ const ExtractorNotion: React.FC = () => {
       </section>
 
       {/* ═══════════════════════════════════════════
+          BLOC NOTION A — Pleine largeur + 2 cartes
+          (Pattern "Trouvez des réponses, où qu'elles se cachent")
+      ═══════════════════════════════════════════ */}
+      <section className="py-24 bg-[#F7F7F5] border-t border-b border-[#E3E3E3]">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-[40px] font-bold tracking-tight leading-tight">
+              Toutes vos données,<br/>enfin réunies.
+            </h2>
+            <p className="text-lg text-gray-500 mt-4 max-w-2xl mx-auto">
+              Vos factures sont dispersées dans votre boîte mail. L'extracteur les centralise, les structure et les rend exploitables — au même endroit.
+            </p>
+          </div>
+
+          {/* Mockup pleine largeur */}
+          <div className="bg-white rounded-2xl border border-[#E3E3E3] p-6 md:p-8 shadow-lg mb-8">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-8 h-8 bg-[#0066DA] rounded-lg flex items-center justify-center">
+                <Layers className="text-white" size={16}/>
+              </div>
+              <div>
+                <div className="font-bold text-sm">Historique centralisé</div>
+                <div className="text-xs text-gray-400">24 factures importées · Jan 2024 — Déc 2025</div>
+              </div>
+            </div>
+            <div className="grid grid-cols-4 md:grid-cols-8 gap-2">
+              {["Jan 24", "Fév 24", "Mar 24", "Avr 24", "Mai 24", "Jun 24", "Jul 24", "Aoû 24", "Sep 24", "Oct 24", "Nov 24", "Déc 24", "Jan 25", "Fév 25", "Mar 25", "Avr 25", "Mai 25", "Jun 25", "Jul 25", "Aoû 25", "Sep 25", "Oct 25", "Nov 25", "Déc 25"].map((month, i) => (
+                <div key={i} className={`text-center p-2 rounded-lg border text-xs font-medium ${i < 20 ? 'bg-blue-50 border-blue-100 text-[#0066DA]' : 'bg-green-50 border-green-100 text-green-700'}`}>
+                  {month}
+                </div>
+              ))}
+            </div>
+            <div className="mt-5 flex flex-wrap items-center justify-between text-sm">
+              <div className="flex items-center gap-6 text-gray-500">
+                <span><strong className="text-[#050505]">156</strong> trajets extraits</span>
+                <span><strong className="text-[#050505]">2</strong> usagers détectés</span>
+                <span><strong className="text-[#050505]">4 820 $</strong> total facturé</span>
+              </div>
+              <span className="text-xs text-gray-400 mt-2 md:mt-0">Dernière mise à jour : il y a 2 min</span>
+            </div>
+          </div>
+
+          {/* 2 cartes en dessous */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white rounded-2xl border border-[#E3E3E3] p-6">
+              <div className="w-10 h-10 bg-orange-50 rounded-lg flex items-center justify-center mb-4">
+                <BarChart3 className="text-orange-600" size={20}/>
+              </div>
+              <h3 className="font-bold text-lg mb-2">Tendances mois par mois</h3>
+              <p className="text-sm text-gray-500 leading-relaxed mb-4">
+                Le dashboard génère automatiquement l'évolution de vos dépenses et détecte les pics de consommation (haute saison, trajets longue distance).
+              </p>
+              <div className="h-20 flex items-end gap-1">
+                {[30, 45, 35, 55, 50, 40, 75, 65, 50, 38, 28, 42].map((h, i) => (
+                  <div key={i} className="flex-1 flex flex-col items-center gap-1">
+                    <div className={`w-full rounded-t-sm ${i === 6 ? 'bg-orange-400' : 'bg-[#0066DA]'}`} style={{ height: `${h}%` }}></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="bg-white rounded-2xl border border-[#E3E3E3] p-6">
+              <div className="w-10 h-10 bg-red-50 rounded-lg flex items-center justify-center mb-4">
+                <AlertTriangle className="text-red-500" size={20}/>
+              </div>
+              <h3 className="font-bold text-lg mb-2">Anomalies détectées</h3>
+              <p className="text-sm text-gray-500 leading-relaxed mb-4">
+                L'extracteur identifie les écarts significatifs : factures inhabituellement élevées, trajets facturés en double, frais inattendus.
+              </p>
+              <div className="space-y-2">
+                <div className="flex items-center gap-2 p-2 bg-orange-50 rounded-lg border border-orange-100">
+                  <AlertTriangle className="text-orange-500 flex-shrink-0" size={14}/>
+                  <span className="text-xs text-orange-700"><strong>Juil 24</strong> — +87 % vs moyenne (haute saison)</span>
+                </div>
+                <div className="flex items-center gap-2 p-2 bg-red-50 rounded-lg border border-red-100">
+                  <AlertTriangle className="text-red-500 flex-shrink-0" size={14}/>
+                  <span className="text-xs text-red-700"><strong>Oct 24</strong> — Frais admin inhabituel (45 $)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          BLOC NOTION B — 2 colonnes visuelles
+          (Pattern "Cherchez et analysez à votre façon")
+      ═══════════════════════════════════════════ */}
+      <section className="py-24">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-[40px] font-bold tracking-tight leading-tight">
+              Explorez et exportez<br/>à votre façon.
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Carte gauche — Export */}
+            <div className="bg-[#F7F7F5] rounded-2xl border border-[#E3E3E3] p-6 md:p-8">
+              <h3 className="font-bold text-lg mb-2">Exportez vers vos outils favoris.</h3>
+              <p className="text-sm text-gray-500 leading-relaxed mb-6">
+                Téléchargez vos données structurées en CSV ou Excel pour vos propres analyses. Compatible avec tous les tableurs.
+              </p>
+              <div className="bg-white rounded-xl border border-[#E3E3E3] p-5">
+                <div className="flex items-center gap-4 mb-4">
+                  {[
+                    { name: "Excel", color: "bg-green-50 border-green-200 text-green-700" },
+                    { name: "Google Sheets", color: "bg-blue-50 border-blue-200 text-blue-700" },
+                    { name: "CSV", color: "bg-gray-50 border-gray-200 text-gray-700" },
+                  ].map((tool, i) => (
+                    <div key={i} className={`flex-1 text-center py-2.5 rounded-lg text-xs font-bold border ${tool.color}`}>
+                      {tool.name}
+                    </div>
+                  ))}
+                </div>
+                <div className="space-y-2">
+                  {[
+                    { label: "Trajets (156 lignes)", format: ".xlsx" },
+                    { label: "Soldes mensuels (24 lignes)", format: ".csv" },
+                    { label: "Transactions annexes (12 lignes)", format: ".xlsx" },
+                  ].map((file, i) => (
+                    <div key={i} className="flex items-center justify-between p-2.5 bg-gray-50 rounded-lg border border-[#E3E3E3]">
+                      <div className="flex items-center gap-2">
+                        <Download className="text-gray-400" size={14}/>
+                        <span className="text-sm font-medium">{file.label}</span>
+                      </div>
+                      <span className="text-xs text-gray-400 font-mono">{file.format}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Carte droite — Filtrage */}
+            <div className="bg-[#F7F7F5] rounded-2xl border border-[#E3E3E3] p-6 md:p-8">
+              <h3 className="font-bold text-lg mb-2">Filtrez par période et par usager.</h3>
+              <p className="text-sm text-gray-500 leading-relaxed mb-6">
+                Isolez les données d'un trimestre précis, d'un co-abonné spécifique, ou combinez les filtres pour une vue sur mesure.
+              </p>
+              <div className="bg-white rounded-xl border border-[#E3E3E3] p-5">
+                <div className="space-y-4">
+                  {/* Filtre période */}
+                  <div>
+                    <div className="text-xs font-bold text-gray-500 uppercase mb-2">Période</div>
+                    <div className="flex gap-2">
+                      {["3 mois", "6 mois", "1 an", "Tout"].map((period, i) => (
+                        <div key={i} className={`flex-1 text-center py-2 rounded-lg text-xs font-bold border ${i === 2 ? 'bg-blue-50 border-[#0066DA] text-[#0066DA]' : 'bg-white border-[#E3E3E3] text-gray-400'}`}>
+                          {period}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  {/* Filtre usager */}
+                  <div>
+                    <div className="text-xs font-bold text-gray-500 uppercase mb-2">Usager</div>
+                    <div className="flex gap-2">
+                      {[
+                        { label: "Tous", active: false },
+                        { label: "Principal", active: true },
+                        { label: "Co-abonné", active: false },
+                      ].map((filter, i) => (
+                        <div key={i} className={`flex-1 text-center py-2 rounded-lg text-xs font-bold border ${filter.active ? 'bg-purple-50 border-purple-300 text-purple-700' : 'bg-white border-[#E3E3E3] text-gray-400'}`}>
+                          {filter.label}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  {/* Résultat filtre */}
+                  <div className="p-3 bg-gray-50 rounded-lg border border-[#E3E3E3] flex items-center justify-between">
+                    <span className="text-sm text-gray-500">Résultat</span>
+                    <span className="text-sm font-bold">42 trajets · 1 580 $</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          BLOC NOTION C — Grille de fonctionnalités compacte
+          (Pattern "L'espace de travail alimenté par l'IA")
+      ═══════════════════════════════════════════ */}
+      <section className="py-24 bg-[#F7F7F5] border-t border-b border-[#E3E3E3]">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-[40px] font-bold tracking-tight leading-tight">
+              L'extracteur le plus complet<br/>pour Communauto.
+            </h2>
+            <p className="text-lg text-gray-500 mt-4 max-w-2xl mx-auto">
+              Tout ce dont vous avez besoin pour comprendre et maîtriser vos factures.
+            </p>
+          </div>
+          <div className="bg-white rounded-2xl border border-[#E3E3E3] overflow-hidden">
+            {[
+              {
+                category: "Import",
+                items: [
+                  { label: "Glisser-déposer", detail: "Jusqu'à 24 PDF d'un coup" },
+                  { label: "Détection de doublons", detail: "Factures déjà importées ignorées" },
+                  { label: "Réessai automatique", detail: "Erreurs réseau gérées" },
+                ],
+              },
+              {
+                category: "Extraction",
+                items: [
+                  { label: "Bilingue FR / EN", detail: "Détection automatique de la langue" },
+                  { label: "Trajets complets", detail: "Dates, durée, distance, prix, tarif" },
+                  { label: "Taxes détaillées", detail: "TPS et TVQ par ligne de trajet" },
+                ],
+              },
+              {
+                category: "Analyse",
+                items: [
+                  { label: "Dashboard mensuel", detail: "Graphiques d'évolution et KPI" },
+                  { label: "Détection d'anomalies", detail: "Pics, doublons, frais inattendus" },
+                  { label: "Co-abonnés séparés", detail: "Trajets filtrés par usager" },
+                ],
+              },
+              {
+                category: "Export",
+                items: [
+                  { label: "CSV / Excel", detail: "Compatible tous les tableurs" },
+                  { label: "Filtrage par période", detail: "3 mois, 6 mois, 1 an, personnalisé" },
+                  { label: "Données complètes", detail: "Trajets, soldes, transactions" },
+                ],
+              },
+            ].map((section, si) => (
+              <div key={si} className={si > 0 ? 'border-t border-[#E3E3E3]' : ''}>
+                <div className="grid grid-cols-1 md:grid-cols-4">
+                  <div className="p-5 md:p-6 flex items-center md:border-r border-[#E3E3E3] bg-[#FAFAFA]">
+                    <span className="font-bold text-sm text-gray-500 uppercase tracking-wide">{section.category}</span>
+                  </div>
+                  {section.items.map((item, ii) => (
+                    <div key={ii} className={`p-5 md:p-6 ${ii < section.items.length - 1 ? 'md:border-r border-[#E3E3E3]' : ''} border-t md:border-t-0 border-[#E3E3E3]`}>
+                      <div className="font-bold text-sm mb-1">{item.label}</div>
+                      <div className="text-xs text-gray-400">{item.detail}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
           BEFORE / AFTER TABLE
       ═══════════════════════════════════════════ */}
       <section className="py-24 bg-[#F7F7F5] border-t border-[#E3E3E3]">
@@ -590,9 +835,9 @@ const ExtractorNotion: React.FC = () => {
               <ShieldCheck className="text-green-600" size={32}/>
             </div>
             <div>
-              <h3 className="text-xl font-bold mb-2">Vos factures, vos données, votre contrôle.</h3>
+              <h3 className="text-xl font-bold mb-2">Vos factures centralisées, en toute sécurité.</h3>
               <p className="text-gray-500 leading-relaxed">
-                Les fichiers sont chiffrés au repos et traités via un service serverless — le PDF n'est jamais conservé en clair sur nos serveurs. Suppression de vos données à tout moment, en un clic depuis votre compte.
+                Vos PDF sont conservés sur nos serveurs sécurisés et chiffrés au repos. Retrouvez le PDF original de chaque trajet à tout moment — toutes vos infos au même endroit. Suppression de vos données en un clic depuis votre compte.
               </p>
             </div>
           </div>

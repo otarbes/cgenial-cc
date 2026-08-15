@@ -166,13 +166,13 @@ const Extractor: React.FC = () => {
                   <div className="w-10 h-10 bg-[#F7F7F5] rounded-lg flex items-center justify-center border border-[#E3E3E3] mb-4 text-green-600">
                      <ShieldCheck size={20} />
                   </div>
-                  <h3 className="font-bold text-lg mb-2">Sauvegarde Sécurisée</h3>
+                  <h3 className="font-bold text-lg mb-2">Vos PDF Centralisés</h3>
                   <p className="text-gray-500 text-sm leading-relaxed mb-3">
-                     Vos factures sont stockées sur nos serveurs sécurisés. Vous ne perdrez plus jamais votre historique.
+                     Vos factures PDF sont conservées sur nos serveurs sécurisés. Retrouvez le PDF original de chaque trajet à tout moment.
                   </p>
                   <ul className="text-xs text-gray-400 space-y-1">
                      <li>Chiffrement des données au repos</li>
-                     <li>Traitement serverless (fichier non conservé en clair)</li>
+                     <li>PDF consultable pour chaque trajet</li>
                      <li>Suppression de vos données à tout moment</li>
                   </ul>
                </div>
